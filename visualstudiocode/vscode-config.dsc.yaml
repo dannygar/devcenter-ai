@@ -1,0 +1,137 @@
+---
+properties:
+  configurationVersion: 0.2.0
+
+  resources:
+    - resource: PSDscResources/Script
+      directives:
+        description: Copy Settings Json
+        allowPrerelease: true
+      settings:
+        GetScript: |
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          $testResult = $false
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "settings.json"
+            if (Test-Path -Path $destinationPath) {
+              $testResult = $true
+              break
+            }
+          }
+          $testResult
+        TestScript: |
+          $false
+        SetScript: |
+          $sourcePath = "c:\src\devcenter-ai\visualstudiocode\.vscode\settings.json"
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "settings.json"
+
+            if (-not (Test-Path -Path $dir.FullName)) {
+              New-Item -ItemType Directory -Path $dir.FullName -Force
+            }
+
+            # Copy the file, overwriting if it exists
+            Copy-Item -Path $sourcePath -Destination $destinationPath -Force
+          }          
+    - resource: PSDscResources/Script
+      directives:
+        description: Copy Extensions Json
+        allowPrerelease: true
+      settings:
+        GetScript: |
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          $testResult = $false
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "extensions.json"
+            if (Test-Path -Path $destinationPath) {
+              $testResult = $true
+              break
+            }
+          }
+          $testResult
+        TestScript: |
+          $false
+        SetScript: |
+          $sourcePath = "c:\src\devcenter-ai\visualstudiocode\.vscode\extensions.json"
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "extensions.json"
+
+            if (-not (Test-Path -Path $dir.FullName)) {
+              New-Item -ItemType Directory -Path $dir.FullName -Force
+            }
+
+            # Copy the file, overwriting if it exists
+            Copy-Item -Path $sourcePath -Destination $destinationPath -Force
+          }          
+    - resource: PSDscResources/Script
+      directives:
+        description: Copy launch Json
+        allowPrerelease: true
+      settings:
+        GetScript: |
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          $testResult = $false
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "launch.json"
+            if (Test-Path -Path $destinationPath) {
+              $testResult = $true
+              break
+            }
+          }
+          $testResult
+        TestScript: |
+          $false
+        SetScript: |
+          $sourcePath = "c:\src\devcenter-ai\visualstudiocode\.vscode\launch.json"
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "launch.json"
+
+            if (-not (Test-Path -Path $dir.FullName)) {
+              New-Item -ItemType Directory -Path $dir.FullName -Force
+            }
+
+            # Copy the file, overwriting if it exists
+            Copy-Item -Path $sourcePath -Destination $destinationPath -Force
+          }          
+    - resource: PSDscResources/Script
+      directives:
+        description: Copy Tasks Json
+        allowPrerelease: true
+      settings:
+        GetScript: |
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          $testResult = $false
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "tasks.json"
+            if (Test-Path -Path $destinationPath) {
+              $testResult = $true
+              break
+            }
+          }
+          $testResult
+        TestScript: |
+          $false
+        SetScript: |
+          $sourcePath = "c:\src\devcenter-ai\visualstudiocode\.vscode\tasks.json"
+          $destinationDir = "z:\workspaces\"
+          $dirs = Get-ChildItem -Path $destinationDir -Directory
+          foreach ($dir in $dirs) {
+            $destinationPath = Join-Path -Path $dir.FullName -ChildPath "tasks.json"
+
+            if (-not (Test-Path -Path $dir.FullName)) {
+              New-Item -ItemType Directory -Path $dir.FullName -Force
+            }
+
+            # Copy the file, overwriting if it exists
+            Copy-Item -Path $sourcePath -Destination $destinationPath -Force
+          }          
