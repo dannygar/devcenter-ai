@@ -1,0 +1,56 @@
+{
+    "debug.onTaskErrors": "abort",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "eslint.enable": true,
+    "eslint.workingDirectories": ["./packages", "./samples"],
+    "hints.no-inline-styles": "off", // Removes warnings for coverage report files
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/aad.*.json"
+            ],
+            "schema": {}
+        }
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "prettier-eslint-typescript.eslintConfig": {
+        "rules": {
+            "ban-types": "off",
+            "explicit-function-return-type": "off",
+            "explicit-member-accessibility": "off", 
+            "explicit-module-boundary-types": "off",
+            "interface-name-prefix": "off",
+            "no-empty-function": "off",
+            "no-explicit-any": "off",
+            "no-namespace": "off",
+            "no-non-null-assertion": "off",
+            "no-unused-vars": "off",
+            "jsdoc/empty-tags": "off",
+            "no-async-promise-executor": "off",
+            "no-constant-condition": "off",
+            "no-extra-boolean-cast": "off",
+            "no-prototype-builtins": "off",
+            "no-undef": "off", // Disabled due to conflicts with @typescript/eslint
+            "prettier/prettier": "error",
+            "one-var": [ "error", { "initialized": "never", "uninitialized": "always" } ],
+            "prefer-const": "error",
+            "prefer-template": "error",
+            "array-bracket-spacing": [ "error", "always" ],
+            "generator-star-spacing": [ "error", "both" ],
+            "space-before-function-paren": [ "error", "always" ],
+            "yield-star-spacing": [ "error", "both" ]
+        }
+   },
+   "prettier-eslint-typescript.prettierOptions": {
+      "arrowParens": "avoid",
+      "bracketSpacing": true,
+      "printWidth": 120,
+      "quoteProps": "as-needed",
+      "singleQuote": true,
+      "tabWidth": 3,
+      "trailingComma": "none",
+      "useTabs": false,
+      "endOfLine": "lf"
+   }    
+}
