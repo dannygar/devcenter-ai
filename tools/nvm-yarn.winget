@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+properties:
+  resources:
+  - directives:
+      allowPrerelease: true
+      description: NVM for Windows
+    settings:
+      id: CoreyButler.NVMforWindows
+      source: winget
+    resource: Microsoft.WinGet.DSC/WinGetPackage
+  - directives:
+      allowPrerelease: true
+      description: Yarn
+    settings:
+      id: Yarn.Yarn
+      source: winget
+    resource: Microsoft.WinGet.DSC/WinGetPackage
+  configurationVersion: 0.2.0

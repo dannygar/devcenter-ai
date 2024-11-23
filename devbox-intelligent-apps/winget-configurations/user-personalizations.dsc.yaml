@@ -94,17 +94,6 @@ properties:
        allowPrerelease: true
      settings:
        id: Ghisler.TotalCommander
-########################################
-   ### Install and Configure Oh My Posh
-   ### Install oh-my-posh
-   ### -------------------------------------
-   - resource: Microsoft.WinGet.DSC/WinGetPackage
-     id: OMP
-     directives:
-       description: Install Oh My Posh
-       allowPrerelease: true
-     settings:
-       id: JanDeDobbeleer.OhMyPosh
    ### Install Visual Studio Code and Extensions
    ### Install VS Code Extensions
    ### -------------------------------------
