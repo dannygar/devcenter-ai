@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+properties:
+  resources:
+  - directives:
+      allowPrerelease: true
+      description: Git
+    settings:
+      id: Git.Git
+      source: winget
+    resource: Microsoft.WinGet.DSC/WinGetPackage
+  - directives:
+      allowPrerelease: true
+      description: Git LFS
+    settings:
+      id: GitHub.GitLFS
+      source: winget
+    resource: Microsoft.WinGet.DSC/WinGetPackage
+  configurationVersion: 0.2.0

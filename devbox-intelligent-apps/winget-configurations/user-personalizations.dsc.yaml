@@ -251,7 +251,7 @@ properties:
      settings:
        productId: Microsoft.VisualStudio.Product.Enterprise
        channelId: VisualStudio.17.Preview
-       VsConfigFile: 'c:\src\devcenter-ai\devbox-intelligent-apps\visualstudio\extensions\extensions.vsconfig'
+       VsConfigFile: 'c:\workspaces\devcenter-ai\devbox-intelligent-apps\visualstudio\extensions\extensions.vsconfig'
        includeRecommended: true
        allowUnsignedExtensions: true
 ########################################
@@ -263,7 +263,7 @@ properties:
       description: Set Visual Studio Unified Settings Profile environment variable
      settings:
       Name: VS_UNIFIED_SETTINGS_PROFILE
-      Value: 'c:\src\devcenter-ai\devbox-intelligent-apps\visualstudio\settings\devbox'
+      Value: 'c:\workspaces\devcenter-ai\devbox-intelligent-apps\visualstudio\settings\devbox'
       Ensure: Present
    ### Setup .NET Aspire
    ### -------------------------------------
@@ -290,7 +290,7 @@ properties:
   #    settings:
   #      SetScript: |
   #        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-  #        Remove-Item -Path "c:\src\devcenter-ai\" -Recurse -Force
+  #        Remove-Item -Path "c:\workspaces\devcenter-ai\" -Recurse -Force
   #      GetScript: return $false
   #      TestScript: return $false
 ########################################
