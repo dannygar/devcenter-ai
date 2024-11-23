@@ -1,6 +1,12 @@
 $schema: "1.0"
 name: "dannyg-devbox"
 tasks:
+  - name: winget
+    parameters:
+      package: Microsoft.VisualStudioCode
+  - name: winget
+    parameters:
+      package: OpenJS.NodeJS
   - name: git-clone
     description: 'Clone this repository into C:\src'
     parameters:
