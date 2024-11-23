@@ -94,6 +94,49 @@ properties:
        allowPrerelease: true
      settings:
        id: Ghisler.TotalCommander
+   ### Copy Total Commander Settings
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: totalcommandersettings
+     directives:
+       description: Copy Total Commander Settings
+     settings:
+       SetScript: |
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "C:\Program Files\totalcmd\wincmd.ini" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "C:\Program Files\totalcmd\wincmd.key" -Force
+       GetScript: return $false
+       TestScript: return $false
+########################################
+   ### Install Beyond Compare
+   ### -------------------------------------
+   - resource: Microsoft.WinGet.DSC/WinGetPackage
+     id: beyondcompare
+     directives:
+       description: Install Beyond Compare 4
+       allowPrerelease: true
+     settings:
+       id: ScooterSoftware.BeyondCompare.4
+   ### Copy Beyond Compare Settings
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: beyondcomparesettings
+     directives:
+       description: Copy Beyond Compare Settings
+     settings:
+       SetScript: |
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\beyondCompare\BC4Key.txt" -Destination "C:\Program Files\Beyond Compare 4\BC4Key.txt" -Force
+       GetScript: return $false
+       TestScript: return $false
+########################################
+   ### Install Notepad ++
+   ### -------------------------------------
+   - resource: Microsoft.WinGet.DSC/WinGetPackage
+     id: notepad++
+     directives:
+       description: Install Notepad ++
+       allowPrerelease: true
+     settings:
+       id: Notepad++.Notepad++
    ### Install Visual Studio Code and Extensions
    ### Install VS Code Extensions
    ### -------------------------------------

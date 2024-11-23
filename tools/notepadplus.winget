@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+
+properties:
+  resources:
+  - directives:
+      allowPrerelease: true
+      description: Notepad++
+    settings:
+      id: Notepad++.Notepad++
+      source: winget
+    resource: Microsoft.WinGet.DSC/WinGetPackage
+  configurationVersion: 0.2.0
