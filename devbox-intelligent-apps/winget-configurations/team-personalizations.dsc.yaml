@@ -41,6 +41,18 @@ properties:
          reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f
        GetScript: return $false
        TestScript: return $false       
+   ### Remove Windows Subsystem for Linux (WSL) Windows feature
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: removewsl
+     directives:
+       description: Removes WSL
+     settings:
+       SetScript: |
+         $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+         Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+       GetScript: return $false
+       TestScript: return $false       
 ########################################
    ### Install CLIs, SDKs & Tools
    ########################################
@@ -142,6 +154,21 @@ properties:
      settings:
        id: Microsoft.VisualStudioCode
        ensure: Present
+   ### Add an "Open with Visual Studio Code" option to the context menu
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: addVscContextMenu
+     directives:
+       description: Adds an "Open with Visual Studio Code" option to the context menu
+     settings:
+       SetScript: |
+         $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+         $vsCodePath = (Get-Command code).Source
+         reg add "HKCR\Directory\shell\VSCode" /d "Open w&ith Code" /f
+         reg add "HKCR\Directory\shell\VSCode\command" /d "\"C:\Program Files\Microsoft VS Code\Code.exe\" \"%V\"" /f
+          
+       GetScript: return $false
+       TestScript: return $false       
 ########################################
    ### Install and Configure Visual Studio 2022
    ### Install Visual Sudio
