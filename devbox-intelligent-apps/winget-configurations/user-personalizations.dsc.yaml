@@ -104,6 +104,8 @@ properties:
        SetScript: |
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "C:\Program Files\totalcmd\wincmd.ini" -Force
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "C:\Program Files\totalcmd\wincmd.key" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "%APPDATA%\GHISLER\wincmd.ini" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "%APPDATA%\GHISLER\wcx_ftp.ini" -Force
        GetScript: return $false
        TestScript: return $false
 ########################################
