@@ -9,7 +9,7 @@ properties:
         allowPrerelease: true
       settings:
         GetScript: |
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           $testResult = $false
           foreach ($dir in $dirs) {
@@ -24,7 +24,7 @@ properties:
           $false
         SetScript: |
           $sourcePath = "c:\workspaces\devcenter-ai\visualstudiocode\.vscode\settings.json"
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           foreach ($dir in $dirs) {
             $destinationPath = Join-Path -Path $dir.FullName -ChildPath "settings.json"
@@ -42,7 +42,7 @@ properties:
         allowPrerelease: true
       settings:
         GetScript: |
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           $testResult = $false
           foreach ($dir in $dirs) {
@@ -57,7 +57,7 @@ properties:
           $false
         SetScript: |
           $sourcePath = "c:\workspaces\devcenter-ai\visualstudiocode\.vscode\extensions.json"
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           foreach ($dir in $dirs) {
             $destinationPath = Join-Path -Path $dir.FullName -ChildPath "extensions.json"
@@ -75,7 +75,7 @@ properties:
         allowPrerelease: true
       settings:
         GetScript: |
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           $testResult = $false
           foreach ($dir in $dirs) {
@@ -90,7 +90,7 @@ properties:
           $false
         SetScript: |
           $sourcePath = "c:\workspaces\devcenter-ai\visualstudiocode\.vscode\launch.json"
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           foreach ($dir in $dirs) {
             $destinationPath = Join-Path -Path $dir.FullName -ChildPath "launch.json"
@@ -108,7 +108,7 @@ properties:
         allowPrerelease: true
       settings:
         GetScript: |
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           $testResult = $false
           foreach ($dir in $dirs) {
@@ -123,7 +123,7 @@ properties:
           $false
         SetScript: |
           $sourcePath = "c:\workspaces\devcenter-ai\visualstudiocode\.vscode\tasks.json"
-          $destinationDir = "z:\workspaces\"
+          $destinationDir = "c:\workspaces\"
           $dirs = Get-ChildItem -Path $destinationDir -Directory
           foreach ($dir in $dirs) {
             $destinationPath = Join-Path -Path $dir.FullName -ChildPath "tasks.json"

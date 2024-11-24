@@ -1,8 +1,14 @@
 $schema: "1.0"
 name: "dannyg-devbox"
 tasks:
+  - name: winget
+    parameters:
+      package: Git.Git
+  - name: winget
+    parameters:
+      package: GitHub.GitLFS
   - name: git-clone
-    description: 'Clone this repository into c:\workspaces'
+    description: 'Clone this repository into C:\workspaces'
     parameters:
       repositoryUrl: https://github.com/dannygar/devcenter-ai.git
       directory: c:\workspaces
@@ -22,14 +28,11 @@ tasks:
   - name: winget
     parameters:
       package: OpenJS.NodeJS
-   ### -------------------------------------
-   ### Install Goldman Sachs repository
-   ### -------------------------------------
   - name: git-clone
-    description: Clone Goldman Sachs GenAI repository into Z:\workspaces
+    description: 'Clone the Goldman Sachs repository into z:\workspaces'
     parameters:
       repositoryUrl: https://github.com/Microsoft-Projects/goldman-genai.git
-      directory: Z:\workspaces
+      directory: z:\workspaces
    ### -------------------------------------
    ### Install VSCode Settings
    ### -------------------------------------

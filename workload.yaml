@@ -8,11 +8,6 @@ tasks:
     parameters:
       package: GitHub.GitLFS
   - name: git-clone
-    description: 'Clone this repository into c:\workspaces'
-    parameters:
-      repositoryUrl: https://github.com/microsoft/devcenter-examples.git
-      directory: c:\workspaces
-  - name: git-clone
     description: 'Clone this repository into C:\workspaces'
     parameters:
       repositoryUrl: https://github.com/dannygar/devcenter-ai.git
