@@ -35,6 +35,18 @@ properties:
        AllowDestructive: true
        FSFormat: 'ReFS'
        Size: '50Gb'  
+   ### Create Workspaces Directory
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: workspaces
+     directives:
+       description: Create Workspaces Directory
+     settings:
+       SetScript: |
+         $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+         New-Item -Path "z:\workspaces" -ItemType Directory -Force
+       GetScript: return $false
+       TestScript: return $false       
    ### Git Configure Name
    ### -------------------------------------
    - resource: GitDsc/GitConfigUserName
@@ -105,7 +117,7 @@ properties:
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "C:\Program Files\totalcmd\wincmd.ini" -Force
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "C:\Program Files\totalcmd\wincmd.key" -Force
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "%APPDATA%\GHISLER\wincmd.ini" -Force
-         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "%APPDATA%\GHISLER\wcx_ftp.ini" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wcx_ftp.ini" -Destination "%APPDATA%\GHISLER\wcx_ftp.ini" -Force
        GetScript: return $false
        TestScript: return $false
 ########################################
@@ -326,6 +338,18 @@ properties:
   #        Remove-Item -Path "c:\workspaces\devcenter-ai\" -Recurse -Force
   #      GetScript: return $false
   #      TestScript: return $false
+   ### Remove Windows Subsystem for Linux (WSL) Windows feature
+   ### -------------------------------------
+   - resource: PSDscResources/Script
+     id: removewsl
+     directives:
+       description: Removes WSL
+     settings:
+       SetScript: |
+         $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+         Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+       GetScript: return $false
+       TestScript: return $false       
 ########################################
    ### Reboot Dev Box
    ### -------------------------------------

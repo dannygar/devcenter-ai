@@ -28,11 +28,6 @@ tasks:
   - name: winget
     parameters:
       package: OpenJS.NodeJS
-  - name: git-clone
-    description: 'Clone the Goldman Sachs repository into z:\workspaces'
-    parameters:
-      repositoryUrl: https://github.com/Microsoft-Projects/goldman-genai.git
-      directory: z:\workspaces
    ### -------------------------------------
    ### Install VSCode Settings
    ### -------------------------------------
@@ -40,3 +35,8 @@ tasks:
     parameters:
       configurationFile: 'c:\workspaces\devcenter-ai\workspaces\goldman\vscode-config.dsc.yaml'
       runAsUser: true
+  - name: git-clone
+    description: 'Clone the Goldman Sachs repository into z:\workspaces'
+    parameters:
+      repositoryUrl: https://github.com/Microsoft-Projects/goldman-genai.git
+      directory: z:\workspaces
