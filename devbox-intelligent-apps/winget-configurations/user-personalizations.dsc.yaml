@@ -114,10 +114,12 @@ properties:
        description: Copy Total Commander Settings
      settings:
        SetScript: |
+         $AppDataPath = $Env:APPDATA
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "C:\Program Files\totalcmd\wincmd.ini" -Force
          copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.key" -Destination "C:\Program Files\totalcmd\wincmd.key" -Force
-         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "%APPDATA%\GHISLER\wincmd.ini" -Force
-         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wcx_ftp.ini" -Destination "%APPDATA%\GHISLER\wcx_ftp.ini" -Force
+         New-Item -ItemType Directory -Path "$AppDataPath\GHISLER" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wincmd.ini" -Destination "$AppDataPath\GHISLER\wincmd.ini" -Force
+         copy-item -Path "c:\workspaces\devcenter-ai\tools\totalcommander\wcx_ftp.ini" -Destination "$AppDataPath\GHISLER\wcx_ftp.ini" -Force
        GetScript: return $false
        TestScript: return $false
 ########################################
