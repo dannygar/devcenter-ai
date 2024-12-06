@@ -252,6 +252,7 @@ properties:
           code --install-extension ipedrazas.kubernetes-snippets
           code --install-extension irongeek.vscode-env
           code --install-extension hashicorp.terraform
+          code --install-extension hb432.prettier-eslint-typescript
           code --install-extension hediet.vscode-drawio
           code --install-extension humao.rest-client
           code --install-extension kakumei.ts-debug
